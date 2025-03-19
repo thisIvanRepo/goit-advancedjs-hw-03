@@ -17,12 +17,26 @@
     <main>
       <div class="container">
         <h1 class="main-title">
-          <span class="main-title-gradient">Welcome</span> to page 2
+          <span class="main-title-gradient">Welcome</span> to solution task
         </h1>
+
+        <div class="container-task">
+          <form class="search-form form-js">
+            <input type="text" class="search-input input-js" placeholder="Search images...">
+            <button class="search-button btn-js" type="submit">Search</button>
+          </form>
+
+          <div id="loader" class="loader hidden"></div>
+
+          <ul class="colection-images colection-images-js">
+          </ul>
+        </div>
+
         <load src="./partials/back-link.html" />
       </div>
     </main>
 
     <load src="./partials/footer.html" />
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
