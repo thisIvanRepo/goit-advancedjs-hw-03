@@ -1,4 +1,4 @@
-import refs from "./js/refs";
+import { refs } from "./js/refs";
 import fetchImages from "./js/pixabay-api";
 import renderImages from "./js/render-functions";
 import SimpleLightbox from "simplelightbox";
@@ -13,6 +13,7 @@ let lightbox = new SimpleLightbox('.gallery-link', {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const inputValue = input.value.trim();
+  list.innerHTML = "";
 
   fetchImages(inputValue)
     .then((images) => {

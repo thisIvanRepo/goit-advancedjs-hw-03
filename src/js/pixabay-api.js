@@ -1,4 +1,5 @@
 import iziToast from 'izitoast';
+import { refs } from './refs';
 
 const fetchParams = {
   BASE_URL: 'https://pixabay.com/api/',
@@ -6,7 +7,6 @@ const fetchParams = {
   IMAGE_TYPE: 'photo',
   ORIENTATION: 'horizontal',
   SEFESEARCH: true,
-  
 }
 
 const { BASE_URL, API_KEY, IMAGE_TYPE, ORIENTATION, SEFESEARCH } = fetchParams
@@ -20,6 +20,8 @@ function fetchImages (value) {
 
       return Promise.resolve([]);
   }
+
+  refs.loader.classList.remove('hidden');
 
   return fetch(`${BASE_URL}?key=${API_KEY}&q=${value}&image_type=${IMAGE_TYPE}&orientation=${ORIENTATION}&safesearch=${SEFESEARCH}`)
     .then(response => {
@@ -49,6 +51,9 @@ function fetchImages (value) {
 
       console.log(error);
     })
+    .finally(() => {
+      refs.loader.classList.add('hidden');
+    });
   }
 
 export default fetchImages;
