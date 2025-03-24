@@ -38,7 +38,7 @@
   height: 60vh;
 }
 
-.search-form {
+.form {
   width: fit-content;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -89,7 +89,7 @@
   background-color: #747bff;
 }
 
-.colection-images {
+.gallery {
   display: grid;
   grid-template-columns: repeat(3, 360px);
   grid-auto-rows: 200px;
@@ -97,6 +97,7 @@
 }
 
 .loader {
+  display: block;
   margin: 0 auto;
   width: fit-content;
   font-weight: bold;
